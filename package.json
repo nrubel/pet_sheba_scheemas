@@ -10,7 +10,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch": "npm version patch",
-    "publish": "npm publish",
     "build": "tsc"
   },
   "keywords": [],
