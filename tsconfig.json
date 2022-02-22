@@ -4,7 +4,6 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
-    "typeRoots": [ "./lib", "./node_modules/@types"],
     "strict": true
   },
   "include": ["src"],

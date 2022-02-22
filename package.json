@@ -2,7 +2,11 @@
   "name": "petsheba_schema",
   "version": "0.0.1",
   "description": "Pet sheba project Schema. The package mainly for personal use",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "patch": "npm version patch",
