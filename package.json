@@ -1,6 +1,6 @@
 {
   "name": "petsheba_schema",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Pet sheba project Schema. The package mainly for personal use",
   "main": "lib/index.js",
   "typings": "lib/index",
