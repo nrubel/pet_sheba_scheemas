@@ -1,10 +1,12 @@
 import {Document, model, Model, Schema} from "mongoose";
 
+// Tools
 const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 export const isEmailValid = (val: string): boolean => emailPattern.test(val);
 
 export const adminRoles: string[] = [`root`, `admin`]
 
+// Interfaces
 export interface IAdmin extends Document {
   email: string;
   name: string;
@@ -12,7 +14,23 @@ export interface IAdmin extends Document {
   loginCount: number;
   role: `root` | `admin`;
 }
+export interface IClinic extends Document {
+  ownerName: string;
+  ownerNIdNo: string;
+  ownerNIdImage: string;
+  clinicName: string;
+  clinicTradeLicenseNo: string;
+  clinicTradeLicenseImage: string;
+  email: string;
+  phone: string;
+  password: string;
+  location: string[];
+  address: string;
+  loginCount: number;
+  logo: string;
+}
 
+// Schema
 export const AdminSchema: Schema = new Schema({
   email: {
     type: String,
@@ -49,23 +67,6 @@ AdminSchema.set('toJSON', {
   },
 });
 
-export const Admin: Model<IAdmin> = model('Admin', AdminSchema);
-
-export interface IClinic extends Document {
-  ownerName: string;
-  ownerNIdNo: string;
-  ownerNIdImage: string;
-  clinicName: string;
-  clinicTradeLicenseNo: string;
-  clinicTradeLicenseImage: string;
-  email: string;
-  phone: string;
-  password: string;
-  location: string[];
-  address: string;
-  loginCount: number;
-  logo: string;
-}
 
 export const ClinicSchema: Schema = new Schema({
   ownerName: {
@@ -141,4 +142,6 @@ ClinicSchema.set('toJSON', {
   },
 });
 
+// Models
+export const Admin: Model<IAdmin> = model('Admin', AdminSchema);
 export const Clinic: Model<IClinic> = model('Clinic', ClinicSchema);
