@@ -8,8 +8,6 @@ export interface IAdmin extends Document {
     loginCount: number;
     role: `root` | `admin`;
 }
-export declare const AdminSchema: Schema;
-export declare const Admin: Model<IAdmin>;
 export interface IClinic extends Document {
     ownerName: string;
     ownerNIdNo: string;
@@ -25,5 +23,7 @@ export interface IClinic extends Document {
     loginCount: number;
     logo: string;
 }
+export declare const AdminSchema: Schema;
 export declare const ClinicSchema: Schema;
+export declare const Admin: Model<IAdmin>;
 export declare const Clinic: Model<IClinic>;
